@@ -4,7 +4,6 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
   name: guestbook-ui
-  namespace: guestbook-ui
 spec:
   ingressClassName: traefik
   rules:

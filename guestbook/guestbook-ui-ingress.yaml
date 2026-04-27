@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+  name: guestbook-ui
+  namespace: guestbook-ui
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: guestbook-ui.stage.aws.onpier.de
+    http:
+      paths:
+      - backend:
+          service:
+            name: guestbook-ui
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - guestbook-ui-tls
+    secretName: guestbook-ui.stage.aws.onpier.de
+

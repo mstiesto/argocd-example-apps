@@ -19,6 +19,6 @@ spec:
         pathType: ImplementationSpecific
   tls:
   - hosts:
-    - guestbook-ui-tls
-    secretName: guestbook-ui.stage.aws.onpier.de
+    - guestbook-ui.stage.aws.onpier.de
+    secretName: guestbook-ui-tls
 
